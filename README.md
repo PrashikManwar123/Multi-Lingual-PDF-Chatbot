@@ -96,7 +96,7 @@ else:
     return ocr_extraction(images)
 ```
 2. Multi-Query Retrieval: 
-Instead of searching for your exact question, the LLM generates 2 different versions of your question to capture different nuances. This ensures that the vector search finds the most relevant document chunks even if your wording is slightly off.
+Instead of searching for your exact question, the LLM generates different versions of your question to capture different nuances. This ensures that the vector search finds the most relevant document chunks even if your wording is slightly off.
 
 ## Troubleshooting: 
 - Tesseract Not Found:
