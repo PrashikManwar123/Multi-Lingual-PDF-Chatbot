@@ -4,7 +4,7 @@
 ![LangChain](https://img.shields.io/badge/LangChain-0.1-green)
 ![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-orange)
 
-A Retrieval-Augmented Generation (RAG) pipeline designed to chat with PDF documents entirely locally. This project utilizes **Ollama** for the LLM and Embeddings, **ChromaDB** for vector storage, and a robust **Hybrid Text Extraction** system that handles both standard and scanned (image-based) PDFs.
+A Retrieval-Augmented Generation (RAG) pipeline designed to chat with PDF documents entirely locally. This project utilizes **Ollama** for the LLM and Embeddings, **ChromaDB** for vector storage, and a robust **Hybrid Text Extraction** system that handles both standard and scanned (image-based) PDFs of **different languages**.
 
 ## 🚀 Key Features
 
@@ -60,30 +60,31 @@ pip install "unstructured[all-docs]" pymupdf pytesseract pdf2image Pillow
 
 ## 📖 Usage
 
-1. Start Ollama
+1. Start Ollama:
 Ensure your Ollama server is running (usually runs in the background or via ollama serve).
 
-2. Open the Notebook
+2. Open the Notebook:
 Launch rag_notebook_ollama.ipynb in Jupyter Lab, Jupyter Notebook, or Google Colab.
 
-3. Configure PDF Path
+3. Configure PDF Path: 
 Find the configuration section in the notebook:
 ```bash
 pdf_file_path = "/path/to/your/document.pdf"
 language_code = "eng"  # or 'ben', 'hin', etc.
 ```
 
-4. Run All Cells: The notebook will:
-
+4. Run All Cells:
+The notebook will:
 - Check if the PDF requires OCR.
 - Extract text and chunk it.
 - Create a local Vector Database (Chroma).
 - Initialize the Retrieval Chain.
   
-5. Chat: Use the chat_with_pdf("Your Question") function at the bottom of the notebook to query your document.
+5. Chat:
+Use the chat_with_pdf("Your Question") function at the bottom of the notebook to query your document.
 
 ## ⚙️ How It Works
-1. Hybrid Extraction Logic
+1. Hybrid Extraction Logic: 
 
 The system avoids running slow OCR on every file. It uses a simple logic gate:
 
@@ -94,7 +95,7 @@ else:
     print("Switching to OCR...")
     return ocr_extraction(images)
 ```
-2. Multi-Query Retrieval
+2. Multi-Query Retrieval: 
 Instead of searching for your exact question, the LLM generates 2 different versions of your question to capture different nuances. This ensures that the vector search finds the most relevant document chunks even if your wording is slightly off.
 
 ## Troubleshooting: 
