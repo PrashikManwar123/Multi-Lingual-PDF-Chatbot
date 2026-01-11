@@ -84,9 +84,7 @@ The notebook will:
 Use the chat_with_pdf("Your Question") function at the bottom of the notebook to query your document.
 
 ## ⚙️ How It Works
-1. Hybrid Extraction Logic: 
-
-The system avoids running slow OCR on every file. It uses a simple logic gate:
+1. **Hybrid Extraction Logic**: The system avoids running slow OCR on every file. It uses a simple logic gate:
 
 ```bash
 if direct_extraction_word_count >= 100:
@@ -95,8 +93,7 @@ else:
     print("Switching to OCR...")
     return ocr_extraction(images)
 ```
-2. Multi-Query Retrieval: 
-Instead of searching for your exact question, the LLM generates different versions of your question to capture different nuances. This ensures that the vector search finds the most relevant document chunks even if your wording is slightly off.
+2. **Multi-Query Retrieval**: Instead of searching for your exact question, the LLM generates different versions of your question to capture different nuances. This ensures that the vector search finds the most relevant document chunks even if your wording is slightly off.
 
 ## ⚠️ Troubleshooting: 
 - Tesseract Not Found:
