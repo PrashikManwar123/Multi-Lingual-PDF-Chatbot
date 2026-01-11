@@ -119,8 +119,8 @@ This avoids mixing data from different PDFs.
 Here is the model answering a question based on the scanned document content using the local Llama 3.2 model.
 
 ![English PDF output](assets/eng_pdf_op.png)
-![Chinese PDF output](assets/chi_pdf_op.png)
-![Urdu PDF output](assets/urd_pdf_op.png)
+![Chinese PDF output](assets/chinese_pdf_op.png)
+![Urdu PDF output](assets/urdu_pdf_op.png)
 
 ## 🤝 Contributing
 
