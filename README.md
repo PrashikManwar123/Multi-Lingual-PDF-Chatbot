@@ -98,7 +98,7 @@ else:
 2. Multi-Query Retrieval: 
 Instead of searching for your exact question, the LLM generates different versions of your question to capture different nuances. This ensures that the vector search finds the most relevant document chunks even if your wording is slightly off.
 
-## Troubleshooting: 
+## ⚠️ Troubleshooting: 
 - Tesseract Not Found:
 If running locally (not Colab), ensure Tesseract is in your system PATH.
 
